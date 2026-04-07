@@ -1,6 +1,6 @@
 ---
 lab:
-  title: Exercise - Examine GitHub Copilot settings and user interface features
+  title: Exercise - Examine GitHub Copilot settings and user interface features (adjusted by Mark Walsh)
   description: Learn how to configure GitHub Copilot settings and how to access GitHub Copilot features in Visual Studio Code.
   duration: 25 minutes
   level: 200
@@ -10,7 +10,7 @@ lab:
     - Visual Studio Code
 ---
 
-# Examine GitHub Copilot settings and user interface features
+# Examine GitHub Copilot settings and user interface features  (adjusted by Mark Walsh)
 
 Visual Studio Code provides a seamless and customizable GitHub Copilot experience for developers. In this exercise you examine GitHub Copilot settings and explore the GitHub Copilot user interface in Visual Studio Code.
 
@@ -20,60 +20,21 @@ This exercise should take approximately **25** minutes to complete.
 
 ## Before you start
 
-Your lab environment must include the following:
+1. Start the Lab PC, Login
+1. Install Python on the lab PC
+    1. Go to https://www.python.org/downloads/windows/
+    1. Install using the “Windows Installer (64 bit)”
+Run the MSI, tick the checkboxes and choose “Install Now”
 
-- Git 2.48 or later
-- Either .NET or Python:
-
-    - **.NET SDK 9.0** or later with Visual Studio Code with the **C# Dev Kit** extension.
-    - **Python 3.10** or later with Visual Studio Code with the **Python** extension
-
-- Access to a GitHub account with GitHub Copilot enabled.
-
-If you're using a local PC as a lab environment for this exercise:
-
-- For help configuring your local PC as your lab environment, open the following link in a browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure your lab environment resources</a>.
-
-- For help enabling your GitHub Copilot subscription in Visual Studio Code, open the following link in a browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Enable GitHub Copilot within Visual Studio Code</a>.
-
-If you're using a hosted lab environment for this exercise:
-
-- For help enabling your GitHub Copilot subscription in Visual Studio Code, paste the following URL into a browser's site navigation bar: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Enable GitHub Copilot within Visual Studio Code</a>.
-
-- To ensure that the .NET SDK is configured to use the official NuGet.org repository as a source for downloading and restoring packages:
-
-    Open a command terminal and then run the following command:
-
-    ```bash
-
-    dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-
-    ```
-
-- To configure the hosted lab environment for Python, follow these steps:
-
-    1. To determine the version of Python installed in the hosted environment, run the following command:
-
-        ```bash
-        python --version
-        ```
-
-        If necessary, use the following steps at the following URL to Configure Python in Visual Studio Code: <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank">Getting Started with Python in VS Code</a>.
-
-    1. Install the Python extension using the Extensions view in Visual Studio Code.
 
 ## Exercise scenario
 
-You're a developer working in the IT department of your local community. The backend systems that support the public library were lost in a fire. Your team needs to develop a temporary solution to help the library staff manage their operations until the system can be replaced. Your team chose GitHub Copilot to accelerate the development process.
 
 This exercise includes the following tasks:
 
 1. Examine GitHub Copilot settings in Visual Studio Code.
 1. Explore the GitHub Copilot user interface in Visual Studio Code.
 
-## Examine GitHub Copilot settings in Visual Studio Code
-
-GitHub Copilot settings are split between your GitHub account and the Visual Studio Code environment. In Visual Studio Code, settings enable you to configure the behavior of GitHub Copilot and GitHub Copilot Chat. In your GitHub account, settings enable you to manage your GitHub Copilot subscription, configure the retention of prompts and suggestions, and allow or block suggestions matching public code.
 
 ### Enable or disable GitHub Copilot in Visual Studio Code
 
@@ -85,9 +46,9 @@ Use the following steps to complete this section of the exercise:
 
 1. In Visual Studio Code, open the **Extensions** view.
 
-1. In the list of installed extensions, scroll down until you find **GitHub Copilot**.
+1. In the list of installed extensions, scroll down until you find **GitHub Copilot Chat**. (Note from MarkW: The "GitHub Copilot" extension is now deprecated)
 
-1. To display a dropdown menu for the GitHub Copilot extension that lists Enable and Disable options, select on the gear icon for the GitHub Copilot extension.
+1. To display a dropdown menu for the GitHub Copilot Chat extension that lists Enable and Disable options, select on the gear icon for the GitHub Copilot Chat extension. (MarkW: The graphic)
 
     ![Screenshot showing a dropdown menu for the GitHub Copilot extension.](./Media/m01-github-copilot-enable-disable.png)
 
@@ -103,37 +64,23 @@ Use the following steps to complete this section of the exercise:
 
 1. On Visual Studio Code's top menu bar, open the Copilot Chat menu.
 
-    The Copilot Chat menu includes a **Configure Code Completions** option that provides access to a filtered list of GitHub Copilot settings.
+    The Copilot Chat menu includes a **Configure Inline Suggestions** (MarkW: Was ~~**Configure Code Completions**~~ in older version) option that provides access to a filtered list of GitHub Copilot settings. (MarkW: Note the graphic is out of date.)
 
     ![Screenshot showing how to access the Copilot Chat menu.](./Media/m01-github-copilot-menu.png)
 
-1. On the Copilot Chat menu, select **Configure Code Completions**, and then select **Edit Settings**.
+1. On the Copilot Chat menu, select **Configure Inline Suggestions** (MarkW: Was ~~**Configure Code Completions**~~ in older version), and then select **Edit Settings**.
 
-1. Take a moment to review how the GitHub Copilot settings are organized.
+1. Take a moment to review how the GitHub Copilot settings are organized. (MarkW: Note the graphic is out of date.)
 
     ![Screenshot showing Visual Studio Code settings filtered for GitHub Copilot.](./Media/m01-github-copilot-config-settings.png)
 
-    Notice that the settings for *GitHub Copilot* and *GitHub Copilot Chat* are separated. Also notice the *Preview* and *Experimental* categories.
 
-1. Under the Extensions label, select **GitHub Copilot**.
+
+1. Under the Extensions label, select **GitHub Copilot Chat**. (MarkW: Note the graphic is out of date.)
   
     ![Screenshot showing the setting for the GitHub Copilot extension.](./Media/m01-github-copilot-extension-settings.png)
 
     Notice that the settings list is now filtered for GitHub Copilot only.
-
-    The GitHub Copilot extension has the following setting options:
-
-    - **GitHub.Copilot.Advanced**: Configure advanced settings for GitHub Copilot in settings.json.
-
-        Selecting **Edit in settings.json** opens the settings.json file, which is a JSON file that contains the settings for GitHub Copilot. The settings are organized into sections, and each section contains a list of settings.
-
-        ![Screenshot showing the settings.json file open in the editor.](./Media/m01-github-copilot-extension-settings-advanced-options.png)
-
-    - **GitHub.Copilot.Enable**: Enable or disable Copilot completions for specified languages.
-
-        The term *languages* refers to programming languages, but accommodates other file formats as well. The languages are specified using a list of languages and a value of **true** or **false** to enable or disable GitHub Copilot for each language. By default, GitHub Copilot is enabled for all languages. This setting is specified with the wildcard character **\*** on the first row and the value **true**. The subsequent rows specify languages for which GitHub Copilot is enabled or disabled. For example, GitHub Copilot is enabled for **C#**, **JavaScript**, and **Python** and disabled for **Plaintext** and **Markdown**.
-
-        ![Screenshot showing the enable languages setting open in the editor.](./Media/m01-github-copilot-extension-settings-enable-languages.png)
 
     - **GitHub.Copilot.SelectedCompletionModel**: Select the model to use for Copilot completions.
 
